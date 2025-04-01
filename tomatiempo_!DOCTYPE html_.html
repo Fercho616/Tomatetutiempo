@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Diario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e0f7fa;
+            text-align: center;
+            padding-top: 10%;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        #mensaje {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0277bd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h1 class="text-primary">¿Qué necesito hoy?</h1>
+        <button class="btn btn-lg btn-primary animate__animated animate__pulse animate__infinite" onclick="mostrarMensaje()">Descúbrelo</button>
+        <p id="mensaje" class="animate__animated"></p>
+    </div>
+    
+    <script>
+        const mensajes = [
+            "Respira profundo y suelta la tensión.",
+            "Tómate un momento para agradecer lo que tienes.",
+            "Escucha tu canción favorita y disfruta el momento.",
+            "Sal a caminar y siente el aire fresco.",
+            "Escribe tres cosas que te hicieron sonreír hoy.",
+            "Tómate un descanso y bebe un vaso de agua.",
+            "Haz algo que realmente disfrutes, aunque sea por cinco minutos."
+        ];
+        
+        function mostrarMensaje() {
+            const mensajeElemento = document.getElementById("mensaje");
+            const indice = Math.floor(Math.random() * mensajes.length);
+            mensajeElemento.textContent = mensajes[indice];
+            mensajeElemento.classList.remove("animate__fadeIn");
+            void mensajeElemento.offsetWidth;
+            mensajeElemento.classList.add("animate__fadeIn");
+        }
+    </script>
+</body>
+</html>
